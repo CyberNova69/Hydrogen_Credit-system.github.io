@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hydrogen Credit System Design System - All colors, gradients, fonts, etc defined here
+All colors MUST be HSL for proper theming support
+*/
+
+@layer base {
+  :root {
+    /* Base Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* Enhanced Brand Colors - Hydrogen Credit System */
+    --primary: 240 100% 60%;         /* Vibrant primary blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 240 100% 95%;
+    --primary-dark: 240 100% 40%;
+    
+    /* Enhanced Role-based Color System */
+    --producer: 142 85% 50%;          /* Brighter green for producers */
+    --producer-foreground: 0 0% 98%;
+    --producer-light: 142 85% 95%;
+    --producer-dark: 142 85% 35%;
+    --producer-accent: 142 60% 40%;
+    
+    --regulator: 221 90% 60%;         /* Brighter blue for regulators */
+    --regulator-foreground: 0 0% 98%;
+    --regulator-light: 221 90% 95%;
+    --regulator-dark: 221 90% 40%;
+    --regulator-accent: 221 70% 50%;
+    
+    --buyer: 48 100% 60%;             /* More vibrant yellow/gold for buyers */
+    --buyer-foreground: 240 10% 3.9%;
+    --buyer-light: 48 100% 95%;
+    --buyer-dark: 48 100% 40%;
+    --buyer-accent: 48 80% 50%;
+    
+    --public: 173 70% 50%;            /* Enhanced teal for public */
+    --public-foreground: 0 0% 98%;
+    --public-light: 173 70% 95%;
+    --public-dark: 173 70% 35%;
+    --public-accent: 173 50% 40%;
+    
+    /* Additional vibrant colors */
+    --success: 142 85% 50%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 100% 60%;
+    --warning-foreground: 240 10% 3.9%;
+    --info: 200 100% 60%;
+    --info-foreground: 0 0% 98%;
+    
+    /* UI States */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Form Elements */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 71% 45%;
+    
+    /* Layout */
+    --radius: 1rem;
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--producer)), hsl(var(--public)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 142 71% 45%;
+  }
+
+  .dark {
+    /* Dark Theme Base */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* Dark Cards & Surfaces */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Dark Brand */
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    /* Enhanced Dark Role Colors (adjusted for dark theme) */
+    --producer: 142 85% 60%;
+    --producer-foreground: 240 10% 3.9%;
+    --producer-light: 142 85% 20%;
+    --producer-dark: 142 85% 45%;
+    --producer-accent: 142 60% 50%;
+    
+    --regulator: 221 90% 70%;
+    --regulator-foreground: 240 10% 3.9%;
+    --regulator-light: 221 90% 20%;
+    --regulator-dark: 221 90% 50%;
+    --regulator-accent: 221 70% 60%;
+    
+    --buyer: 48 100% 70%;
+    --buyer-foreground: 240 10% 3.9%;
+    --buyer-light: 48 100% 20%;
+    --buyer-dark: 48 100% 50%;
+    --buyer-accent: 48 80% 60%;
+    
+    --public: 173 70% 60%;
+    --public-foreground: 240 10% 3.9%;
+    --public-light: 173 70% 20%;
+    --public-dark: 173 70% 45%;
+    --public-accent: 173 50% 50%;
+    
+    /* Enhanced dark system colors */
+    --success: 142 85% 60%;
+    --success-foreground: 240 10% 3.9%;
+    --warning: 38 100% 70%;
+    --warning-foreground: 240 10% 3.9%;
+    --info: 200 100% 70%;
+    --info-foreground: 240 10% 3.9%;
+    
+    /* Dark UI States */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Dark Form Elements */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 71% 55%;
+    
+    /* Dark Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--producer)), hsl(var(--public)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    
+    /* Dark Sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 142 71% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
